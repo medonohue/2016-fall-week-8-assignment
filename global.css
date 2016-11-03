@@ -8,16 +8,44 @@
     position:relative;
 }
 .custom-tooltip{
-    position:absolute;
-    width:180px;
-    min-height:50px;
-    padding:10px 5px;
-    background:white;
-    box-shadow: 0 2px 2px 0px rgba(0,0,0,.1);
-    top:0;
-    left:0;
+	position: absolute;
+	z-index: 9999;
+	width: 100px;
+	height: 100px;
+	padding-top: 25px;
+	left: 50%;
+	margin-left: -40px;
+	bottom: 100%;
+	border-radius: 10%;
+	text-align: center;
+	background: #f2f2f2;
+	color: #47c9af;
+	opacity: 0;
+	margin-bottom: 20px;
+	cursor: default;
+	pointer-events: none;
+	-webkit-transform-origin: 50% 100%;
+	transform-origin: 50% 100%;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	
 }
     .custom-tooltip .title{
         font-size:1.2em;
         font-weight:bold;
     }
+    
+        
+    .custom-tooltip::after {
+	position: absolute;
+	top: .5;
+	left:0;
+	width: 60px;
+	height: 60px;
+	background: url(./tooltip3.svg) no-repeat center center;
+	color:#f2f2f2;
+	background-size: 100%;
+	content: '';
+	transition: transform 0.3s;
+	transform-origin: 0 0;
+}
